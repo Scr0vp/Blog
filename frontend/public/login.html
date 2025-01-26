@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Responsive Blog</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+<header>
+    <a href="index.html" class="nav-logo">Paris Monuments</a>
+    <button class="menu-toggle">☰</button>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="btn-container">
+        <a href="login.html" class="btn-register">Sign in</a>
+        <a href="signup.html" class="btn-register">Sign up</a>
+    </div>
+</header>
+
+    <!-- Login Form -->
+    <div class="contact-form">
+        <h2 class="contact-heading">Login</h2>
+        <form id="login-form" action="/login" method="POST">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+    <button type="submit">Login</button>
+</form>
+        <p id="error-message" style="color:red; display:none;">Invalid email or password.</p>
+    </div><br>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <h2>Follow Us</h2>
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </div>
+        <p>&copy; 2025. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+	
+	    <script>
+  window.addEventListener('load', () => {
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        const data = {
+          email,
+          password
+        };
+
+        try {
+          const response = await fetch('http://localhost:3000/auth/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.status === 200) {
+            console.log('Login successful:', result);
+            // Redirect to dashboard page
+            window.location.href = 'dashboard.html';  // Ensure this path is correct
+          } else {
+            console.log('Error:', result.error);
+            document.getElementById('error-message').style.display = 'block';
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+          document.getElementById('error-message').style.display = 'block';
+        }
+      });
+    } else {
+      console.error('Login form not found!');
+    }
+  });
+</script>
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>

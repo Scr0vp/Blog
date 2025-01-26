@@ -1,0 +1,828 @@
+/* Reset some default styles */
+body, h1, h2, p, ul, li, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+header nav {
+    flex: 1; /* Allow nav to take up space */
+    text-align: center; /* Center align navigation menu */
+}
+
+header nav ul {
+    display: inline-flex; /* Align menu items horizontally */
+    list-style: none; /* Remove default bullet points */
+    gap: 20px; /* Add space between menu links */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+header nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Link color */
+    font-weight: bold; /* Bold links */
+    font-size: 16px; /* Adjust font size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+header nav ul li a:hover {
+    color: #ed2024; /* Hover effect for links */
+}
+
+header .btn-register {
+    background: #ed2024;
+    color: #fff;
+    margin-right: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+header .btn-register:hover {
+    background: #c9171d; /* Slightly darker red for hover */
+    transform: scale(1.05); /* Enlarge slightly on hover */
+}
+
+header .btn-register:active {
+    background: #a31317; /* Even darker red on click */
+    transform: scale(0.95); /* Shrink slightly on click */
+}
+/* Hide Menu by Default (Mobile) */
+.menu-toggle {
+    font-size: 24px;
+    align-self: self-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: none;
+}
+
+/* Dropdown Styles for Mobile */
+@media (max-width: 768px) {
+    header .btn-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Space between buttons */
+        width: 100%;
+    }
+
+    header .btn-register {
+        background: #ed2024;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, transform 0.2s ease;
+        flex: 1; /* Ensures buttons take up equal space */
+        text-align: center;
+    }
+
+    header .btn-register:hover {
+        background: #d81a20;
+        transform: scale(1.05);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        flex: 1;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        list-style: none;
+        background: #f9f9f9;
+        border-top: 1px solid #ddd;
+        margin-top: 10px;
+    }
+
+    .nav-links.show {
+		display: flex;
+		width: 360px;
+		text-align: left;
+		padding: 5px;
+	}
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    header .btn-register {
+        margin-top: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: #191919;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background: #fff;
+    color: #ed2024;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background: #ed2024;
+    color: #fff;
+}
+
+/* Featured Posts Section */
+.featured-posts {
+    padding: 40px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.featured-posts h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.posts-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.posts-grid article {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.posts-grid img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.posts-grid h3 {
+    font-size: 1.5em;
+    margin-top: 15px;
+}
+
+.posts-grid a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #ed2024;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.posts-grid a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Section */
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.content {
+    flex: 3;
+    padding: 20px;
+    background: #fff;
+}
+
+.content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+article {
+    margin-bottom: 20px;
+}
+
+article h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.content a {
+    color: #ed2024;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Section */
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #e2e2e2;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    color: #ed2024;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.newsletter form input {
+    padding: 10px;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter form button {
+    padding: 10px 20px;
+    background: #ed2024;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.newsletter form button:hover {
+    background: #d41e1c;
+}
+
+/* Testimonials Section */
+.testimonials {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.testimonials-grid blockquote {
+    font-style: italic;
+    max-width: 300px;
+}
+
+.testimonials-grid cite {
+    display: block;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Footer Section */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .social-media {
+    margin-bottom: 15px;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer .social-media a:hover {
+    color: #ed2024;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+footer p a {
+    color: #ed2024;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .posts-grid {
+        flex-direction: column;
+    }
+
+    .posts-grid article {
+        width: 100%;
+    }
+
+    .testimonials-grid {
+        flex-direction: column;
+    }
+
+    .newsletter form input {
+        width: 80%;
+    }
+
+    /* Header Section for smaller screens */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav {
+        text-align: center;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Blog Post Styles */
+.post {
+    display: flex;
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.post-content {
+    flex: 1;
+}
+
+.post h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.post p {
+    font-size: 1em;
+    color: #666;
+}
+
+.post a {
+    color: #ed2024;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.latest-post-sidebar {
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+}
+
+.latest-post-sidebar h2 {
+  font-size: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.post-title {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+}
+
+.post-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.read-more {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+.social-share {
+  margin-top: 20px;
+}
+
+.social-share h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-decoration: none;
+}
+
+.social-icons img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #555;
+    box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.contact-form button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ed2024;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #c9171d;
+}
+
+.contact-form button:active {
+    background-color: #a31317;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+.contact-heading {
+    text-align: center;
+    font-size: 36px; /* Adjust as needed */
+    margin-top: 20px; /* Optional, adjust spacing from the top */
+    color: #333; /* Optional, change color if needed */
+}
+html {
+    scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+/* Container for the form */
+.form-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Heading */
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form inputs */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Error message */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Submit button */
+form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:disabled {
+  background-color: #ccc;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Dashboard */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  border-right: 2px solid #ddd;
+}
+
+.sidebar h2 {
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+button.delete-post {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button.delete-post:hover {
+  background-color: darkred;
+}
+
+/* dashboard */
+body.dashboard-page {
+    display: flex;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+body.dashboard-page .sidebar {
+    width: 250px !important; /* Adjust the width as needed */
+    background-color: #ed2024;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.sidebar .menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .menu li {
+    margin: 15px 0;
+}
+
+.sidebar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.sidebar .menu li a:hover {
+    text-decoration: underline;
+}
+
+.sidebar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h2 {
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
